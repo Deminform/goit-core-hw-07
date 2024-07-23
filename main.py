@@ -8,6 +8,7 @@ book = AddressBook()
 john_record = Record("John")
 john_record.add_phone("1234567890")
 john_record.add_phone("5555555555")
+john_record.add_birthday("20.01.1994")
 
 # Додавання запису John до адресної книги
 book.add_record(john_record)
@@ -15,6 +16,7 @@ book.add_record(john_record)
 # Створення та додавання нового запису для Jane
 jane_record = Record("Jane")
 jane_record.add_phone("9876543210")
+jane_record.add_birthday("18.05.1987")
 book.add_record(jane_record)
 
 # Виведення всіх записів у книзі
@@ -29,8 +31,12 @@ print(john)  # Виведення: Contact name: John, phones: 1112223333; 55555
 
 # Пошук конкретного телефону у записі John
 found_phone = john.find_phone("5555555555")
-print(f"{john.name}: {found_phone}")  # Виведення: John: 5555555555
 
+print(f"{john.name}: {found_phone}. Birthday {john.show_birthday()}")  # Виведення: John: 5555555555
+
+john_record.add_birthday("11.11.3071")
+
+print(f"{john.name}: {found_phone}. Birthday {john.show_birthday()}")  # Виведення: John: 5555555555
 
 jane = book.find('Jane')
 print(jane)

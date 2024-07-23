@@ -1,5 +1,6 @@
 from name import Name
 from phone import Phone
+from birthday import Birthday
 
 
 class Record:
@@ -7,6 +8,27 @@ class Record:
         self.name = Name(name)
         self.phones = []
         self.birthday = None
+
+    ''' Work with birthday field 
+        Methods: 
+        - add_birthday
+        - show_birthday
+    '''
+
+    # @input_error
+    def add_birthday(self, value: str):
+        self.birthday = Birthday(value)
+
+    def show_birthday(self):
+        return self.birthday
+
+    ''' Work with phone field 
+        Methods: 
+        - add
+        - remove
+        - edith
+        - find
+    '''
 
     def add_phone(self, phone_number: str):
         self.phones.append(Phone(phone_number))

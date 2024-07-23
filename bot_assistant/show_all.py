@@ -10,5 +10,4 @@ def show_all(contacts: list):
 
     for person in contacts:
         table.add_row([person['name'], person['phone'], person["id"]])
-
     return 'No records yet' if len(contacts) == 0 else table

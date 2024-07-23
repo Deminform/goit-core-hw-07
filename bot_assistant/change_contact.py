@@ -5,7 +5,6 @@ from decorator import input_error
 
 @input_error
 def change_contact(args: list, contacts: list):
-
     name, phone = args
     if not is_valid_phone_number(phone):
         raise ValueError('Incorrect phone number.')

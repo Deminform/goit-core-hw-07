@@ -12,5 +12,4 @@ def input_error(func):
             return "KeyError."
         except IndexError as e:
             return e.args[0] if not e.args[0].startswith('list') else "Enter the argument for the command"
-
     return inner

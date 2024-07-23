@@ -6,9 +6,7 @@ from decorator import input_error
 
 @input_error
 def add_contact(args: list, contacts: list):
-
     name, phone = args
-
     if is_person_exist(name, contacts):
         raise ValueError('The username is already taken.')
 

@@ -14,6 +14,9 @@ class AddressBook(UserDict):
     def find(self, name: str):
         return next((record for record in self.data.values() if record.name.value == name), None)
 
+    # def show_birthday_by_name(self, name: str):
+    #     return next((record.birthday for record in self.data.values() if record.name.value == name), None)
+
     def delete(self, name: str):
         if name in self.data.keys():
             del self.data[name]
@@ -21,10 +24,10 @@ class AddressBook(UserDict):
     def __str__(self):
         table = PrettyTable()
         table.align = 'l'
-        table.field_names = ["#", "Name", "Phones"]
+        table.field_names = ['#', 'Name', 'Phones', 'Birthday']
 
         for index, record in enumerate(self.data.values(), start=1):
             phones = ", ".join(phone.value for phone in record.phones)
-            table.add_row([index, record.name.value, phones])
+            table.add_row([index, record.name.value, phones, record.birthday])
 
         return table.get_string()

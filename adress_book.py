@@ -40,7 +40,11 @@ class AddressBook(UserDict):
             return self.find_next_weekday(birthday, 0)
         return birthday
 
-    def get_upcoming_birthdays(self, days=7):
+    def get_upcoming_birthdays(self, days=7) -> str:
+        """
+        Retrieve from a list of entries with birthdays in the next 7 days.
+        The result is returned as a table.
+        """
         upcoming_birthdays = []
         today = date.today()
 
@@ -59,6 +63,7 @@ class AddressBook(UserDict):
                     'congratulation_date': congratulation_date_str
                 })
 
+        # Generating a table for return
         table = PrettyTable()
         table.align = 'l'
         table.field_names = ['#', '-- Name --', '-- Congratulation date --']
